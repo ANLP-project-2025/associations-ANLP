@@ -16,7 +16,7 @@ from helpers.FA_Functions import *
 # Free Associations
 
 # Load spelling lookup list for cleaning
-data_path = '../data/mapping_tables/EnglishCustomDict.txt'
+data_path = '../data/intermediate_preprocess_dataset_using_LWOW_code/mapping_tables/EnglishCustomDict.txt'
 
 spelling = loadTextFile(data_path)
 spelling_dict = {a.lower():b.lower() for [a, b] in spelling}
@@ -68,21 +68,4 @@ for model, data in FA_data.items():
 
 # Save datasets
 for model, data in FA_clean_dfs.items():
-    data.to_csv('../data/processed_datasets/FA_' + model + '.csv', index = False)
-
-# Get summary of the cleaned data
-FA_summary_dict = {}
-for model, data in FA_clean_dfs.items():
-    all_resp = list(data['R1']) + list(data['R2']) + list(data['R3'])
-    all_resp = [x for x in all_resp if x != '']
-    d = {'Unique cues': len(set(data['cue'])),
-         'Total responses': len(all_resp),
-         'Unique responses': len(set(all_resp)),
-         'Percent missing responses': ((len(data)*3) - len(all_resp))/(len(data)*3)}
-    FA_summary_dict[model] = d
-df = pd.DataFrame.from_dict(FA_summary_dict).T
-df
-
-# Save the pre-processed data as a csv
-df.to_csv('../data/summary_tables/FA_summary_stats.csv', index = True)
-
+    data.to_csv('../data/intermediate_preprocess_dataset_using_LWOW_code/FA_' + model + '.csv', index = False)
