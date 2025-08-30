@@ -27,7 +27,7 @@ The steps for reproducing the flow used in our article are:
 1. Data cleaning adapted from the LWOW github which we reference in our article
 2. Second preprocessing to create our required format, namely downsamples to exactly 80 rows per cue.
 3. Splitting into train-validate-test datasets.
-4. Training - Fine-tuning the LLlaMa model (meta-llama/Meta-Llama-3-8B-Instruct) to human-like associations.
+4. Training - Fine-tuning the LlaMa model (meta-llama/Meta-Llama-3-8B-Instruct) to human-like associations.
 5. Evaluation - running association task and gathering metrics about the fine-tuning.
 5. Benchmarking - currently on summarization task.
 
@@ -74,8 +74,8 @@ An **evaluation/metrics notebook** (Jupyter) for analyzing model outputs for the
 
 ---
 ### Benchmarking
-### 6) `Benchmarks/benchmarks_perplexity.ipynb`
-### 7) `Benchmarks/benchmarks_summarization.ipynb`
+#### 6) `Benchmarks/benchmarks_perplexity.ipynb`
+#### 7) `Benchmarks/benchmarks_summarization.ipynb`
 
 
 ---
